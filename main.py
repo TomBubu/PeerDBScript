@@ -18,8 +18,8 @@ stld_url = "https://peeringdb.com/ix/94"
 tyoidc_url = "https://peeringdb.com/ix/167"
 
 
-# For SJC:
-uClient = uReq(sjc_url)                                         # Grab the webpage and download it
+# Getting peer name, IPv4, IPv6 from the peeringdb
+uClient = uReq(tyoidc_url)                                         # Grab the webpage and download it
 page_html = uClient.read()                                      # Store the content to the varialbe page_html
 uClient.close()                                                 # Close the client once the webpage is saved
 page_soup = soup(page_html, "html.parser")                      # Pass the page through the BeautifulSoup, use HTML parser
@@ -35,7 +35,12 @@ for k in range(0,len(peer_names)):
     str_to_remove = "\n"
     print(str_names.strip(str_to_remove))
     print(str_ipv4s)
-    print(str_ipv6s)
-    print("\n")
+    print(str_ipv6s + "\n")
     k+=1
 
+# for k in range(0,len(peer_names)):
+#     str_ipv4s = peer_ipv4s[k].get_text()
+#     print(str_ipv4s)
+# for k in range(0, len(peer_names)):
+#     str_ipv6s = peer_ipv6s[k].get_text()
+#     print(str_ipv6s)
