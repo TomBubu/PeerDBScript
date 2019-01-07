@@ -4,6 +4,15 @@ import bs4
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 
+
+#ALLN
+alln_url = "https://peeringdb.com/ix/3"
+#BXB
+bxb_url = "https://peeringdb.com/ix/1086"
+#RCDN
+rcdn_url = "https://peeringdb.com/ix/3"
+#RTP
+rtp_url = "https://peeringdb.com/ix/1"
 #SJC
 sjc_url = "https://peeringdb.com/ix/5"
 #AER
@@ -19,7 +28,7 @@ tyoidc_url = "https://peeringdb.com/ix/167"
 
 
 # Getting peer name, IPv4, IPv6 from the peeringdb
-uClient = uReq(tyoidc_url)                                         # Grab the webpage and download it
+uClient = uReq(sngidc_url)                                         # Grab the webpage and download it
 page_html = uClient.read()                                      # Store the content to the varialbe page_html
 uClient.close()                                                 # Close the client once the webpage is saved
 page_soup = soup(page_html, "html.parser")                      # Pass the page through the BeautifulSoup, use HTML parser
